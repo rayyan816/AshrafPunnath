@@ -1,0 +1,447 @@
+/* --- Global Styles and Reset --- */
+:root {
+    --primary-color: #004c99; /* Deep Blue */
+    --accent-color: #ff6f61;  /* Coral/Orange */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --bg-light: #f9f9f9;
+    --max-width: 1200px;
+    --spacing-extra-large: 80px; 
+    --spacing-large: 40px;
+    --spacing-medium: 20px;
+    --border-radius-card: 12px; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: white;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium);
+}
+
+/* --- Typography (Bigger and bolder) --- */
+h1 { font-size: 4.8rem; font-weight: 800; text-transform: uppercase; margin: 0;} 
+h2 { font-size: 2.8rem; margin-top: 0; border-bottom: 4px solid var(--accent-color); display: inline-block; padding-bottom: 8px; margin-bottom: var(--spacing-large);}
+h3 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 10px;}
+h4 { font-size: 1.3rem; font-weight: 400; color: #666; margin-bottom: 10px;}
+
+.section-padded {
+    padding: var(--spacing-extra-large) 0;
+}
+
+/* ==================================== */
+/* 🌟 NAVIGATION BAR 🌟 */
+/* ==================================== */
+
+#navbar {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 var(--spacing-medium); 
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800; 
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-medium);
+    align-items: center; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s;
+    font-size: 1.05rem; 
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.btn-nav {
+    background: var(--primary-color);
+    color: white !important; 
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-nav:hover {
+    background: var(--accent-color);
+}
+
+
+/* ==================================== */
+/* HERO SECTION & PHOTO HOLDER */
+/* ==================================== */
+
+.hero {
+    padding: 220px 0 150px 0; 
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image-container {
+    margin-bottom: 25px;
+    border: none; 
+    border-radius: 50%; 
+    overflow: hidden;
+    width: 200px; 
+    height: 200px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.tagline {
+    font-size: 2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Primary 'Connect Now' button style */
+.btn {
+    display: inline-block;
+    padding: 15px 30px; 
+    background: #e0e0e0; /* 🌟 LIGHT GREY BACKGROUND 🌟 */
+    color: var(--text-dark) !important; /* 🌟 DARK TEXT FOR CONTRAST 🌟 */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Hover style for the 'Connect Now' button (Cool Animation) */
+.btn.hover-lift:hover {
+    background-color: #cccccc; /* Slightly darker grey on hover */
+    transform: translateY(-5px) scale(1.02); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Clean shadow, removed the glow */
+}
+
+/* ==================================== */
+/* ABOUT SECTION (NEW TWO-COLUMN LAYOUT) */
+/* ==================================== */
+.card {
+    background: white;
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius-card);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); 
+    margin-bottom: var(--spacing-large);
+    margin-top: -100px; 
+    position: relative;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 60px;
+    align-items: start;
+}
+
+.summary-text p {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+}
+
+.info-list {
+    list-style: none;
+    line-height: 2.2;
+    font-size: 1.1rem;
+    padding-left: 0;
+}
+
+/* ==================================== */
+/* 🚀 EXPERIENCE SECTION (VERTICAL TIMELINE) */
+/* ==================================== */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* The vertical line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content {
+    padding: 30px;
+    background: white;
+    position: relative;
+    border-radius: var(--border-radius-card);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover lift/bobbing effect on timeline items */
+.timeline-item.hover-lift:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Placing items on the right side */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+
+/* Placing items on the left side */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 60px;
+}
+
+/* Timeline dots */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid var(--accent-color);
+    top: 45px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-item:nth-child(odd)::after {
+    right: -10px; 
+}
+.timeline-item:nth-child(even)::after {
+    left: -10px; 
+    right: auto;
+}
+
+.timeline-content .date {
+    font-style: italic;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Bullet points reset for odd items (right-aligned text) */
+.timeline-item:nth-child(odd) ul {
+    list-style: none;
+    margin: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) ul {
+    list-style: disc; 
+    margin-left: 20px;
+    text-align: left;
+}
+
+/* ==================================== */
+/* SKILLS GRID */
+/* ==================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px; 
+}
+
+.skill-item {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift/bobbing effect on skill items */
+.skill-item.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================================== */
+/* EDUCATION & LANGUAGES */
+/* ==================================== */
+.education-languages-flex {
+    display: flex;
+    gap: 60px;
+}
+
+.education-col, .languages-col {
+    flex: 1;
+}
+
+.education-item {
+    margin-bottom: var(--spacing-medium);
+}
+
+.language-list {
+    list-style: none;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* ==================================== */
+/* CONTACT AND FOOTER */
+/* ==================================== */
+
+.contact-info {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-medium);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px; 
+    background: #222; 
+    color: var(--text-light);
+    font-size: 1rem; 
+    margin-top: 50px; 
+}
+
+
+/* ==================================== */
+/* ANIMATIONS (SCROLL FADE-IN) */
+/* ==================================== */
+
+.animated-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==================================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ==================================== */
+@media (max-width: 900px) {
+    
+    .timeline-container::after {
+        left: 30px; 
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px; 
+        padding-right: 15px;
+    }
+
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-left: 60px;
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+        right: auto;
+    }
+
+    .timeline-item:nth-child(odd) ul,
+    .timeline-item:nth-child(even) ul {
+        list-style: disc; 
+        margin-left: 20px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; margin-bottom: var(--spacing-medium);}
+    .hero { padding: 120px 0 50px 0; }
+    .tagline { font-size: 1.5rem; }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-medium);
+    }
+    
+    .card { margin-top: 0; }
+    
+    .nav-links { display: none; }
+    .nav-content { justify-content: center; }
+
+    .education-languages-flex {
+        flex-direction: column;
+    }
+}
